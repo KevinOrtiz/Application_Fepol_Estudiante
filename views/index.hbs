@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Ayudantias Fepol</title>
+        <!--Aqui va los links de los archivos que hacen import -->
+        {{> archivos_link}}
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+<!-- Preloader -->
+  <div class="preloader">
+    <div class="pulse"></div>
+  </div>
+  <!-- Preloader End -->
+        <header class="header-v1">
+            <!-- Static navbar -->
+            {{> navbar_general}}
+            
+        </header>
+
+        <!--fullscreen image parallax start-->
+               <!--intro section start-->
+        <!--static background parallax start-->
+        <section id="welcome">
+            <!--- Aqui va el banner-->
+            {{> banner_home}}
+        </section>
+        <!--intro section end-->
+        <!--fullscreen image parallax end-->
+        <!-- Pequeña leyenda de la pagina -->
+        <!-- Se mostrara el reloj de inicio y cierre de registro cuando el administrador ingrese las horas -->
+
+        <div class="call-to-action">
+            {{> descripcion_ayudantias}}
+        </div>
+        <!--end cta-->
+
+        <div class="parallax-bg pd-t-80 pd-b-50" style="background: url('img/bg1.jpg');">
+            <div class='container'>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text-center">
+                        <div class="center-title">
+                            <h3 class="text-white">Que deberias saber acerca del registro !</h3>
+                            <p class="text-white">
+                                En unos simples tres pasos te explicamos que deberás tener en cuenta
+                                 al momento de registrarte  en los cursos que ofrece fepol.
+                            </p>
+                        </div>
+                    </div>
+                </div><!--end center title-->
+                <div class="row">
+                    <!--AQUI VA LAS DESCRIPCIONES SEGÚN LOS EVENTOS -->
+                    {{> descripcion_previa_ayudantias}}
+                    
+                </div>
+            </div>
+        </div><!--help type section end-->
+        <div class="white-bg pd-t-80 pd-b-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text-center">
+                        <div class="center-title">
+                            <h3>Dudas y sugerencias</h3>
+                            <p>
+                                Si tienes alguna duda o sugerencia con el funcionamiento de la aplicacion,
+                                presiona el boton de abajo para contactarte con nosotros.
+                            </p>
+                            <br>
+                            <a href="/contactos" class="btn btn-theme-bg btn-lg">Contactanos!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 margin-b-30">
+                        <h4>Acerca de Fepol</h4>
+                        <p>
+                            Somos la representación estudiantil de ESPOL, defendemos nuestros derechos,
+                            integramos a la comunidad politécnica y aportamos a su formación profesional.
+                        </p>
+                        <div class="f-contact">
+                            <p><i class="fa fa-home"></i>km 30,5 Via Perimetral, Guayaquil</p>
+                            <p><i class="fa fa-phone-square"></i> +01 (1800) - 0320-433-3403</p>
+                            <p><i class="fa fa-envelope-square"></i>fepol@espol.edu.ec</p>                           
+                        </div>
+                    </div><!--end col-->
+                </div>
+            </div>
+            <div class="container text-center text-copyright">
+                <span>&copy;Federación de estudiantes politécnicos del litoral</span>
+            </div>
+        </footer>
+        {{> archivos_script}}
+
+        <script>
+           //revolution hero
+            var tpj = jQuery;
+            var revapi20;
+            tpj(document).ready(function () {
+                if (tpj("#rev_slider_20_1").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#rev_slider_20_1");
+                } else {
+                    revapi20 = tpj("#rev_slider_20_1").show().revolution({
+                        sliderType: "hero",
+                        jsFileLocation: "../../revolution/js/",
+                        sliderLayout: "fullscreen",
+                        dottedOverlay: "none",
+                        delay: 9000,
+                        navigation: {
+                        },
+                        responsiveLevels: [1240, 1024, 778, 480],
+                        gridwidth: [1240, 1024, 778, 480],
+                        gridheight: [600, 500, 400, 300],
+                        lazyType: "none",
+                        parallax: {
+                            type: "mouse",
+                            origo: "slidercenter",
+                            speed: 2000,
+                            levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50]
+                        },
+                        shadow: 0,
+                        spinner: "off",
+                        autoHeight: "off",
+                        disableProgressBar: "on",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            disableFocusListener: false
+                        }
+                    });
+                }
+            });	/*ready*/
+        </script>
+
+    </body>
+</html>

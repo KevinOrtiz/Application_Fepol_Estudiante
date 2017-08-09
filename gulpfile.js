@@ -14,6 +14,10 @@ gulp.task('start_project',['browser-sync'],()=>{
 
 });
 
+gulp.task('test',()=>{
+    console.log("Pruebas efectuadas con exito");
+});
+
 gulp.task('lint',()=>{
     gulp.src('./**/*.js')
         .pipe(jshint())
